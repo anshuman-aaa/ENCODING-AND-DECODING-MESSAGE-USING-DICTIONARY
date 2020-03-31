@@ -1,8 +1,7 @@
-// #include <iostream>
-// #include <string>
+#include <bits/stdc++.h>
 // #include <fstream>
 // #include <time.h>
-#include <bits/stdc++.h>
+
 using namespace std;
 #define MAX 8
 
@@ -74,11 +73,11 @@ int main(){
 	int last_index = len_dictionary;
 	int message_len = len_message;
 	int startIndex=0;
-	while(message_len>=1e6-1e6)
+	while(message_len>=1)
 	{
 		char match=message[startIndex];
 		int k=last_index-1;
-		while(k>=0){
+		while(k>=1){
 			for(k=last_index-1;k>=0;k--){
 				if(match == dictionary[k]){
 					last_index=k;
@@ -116,10 +115,10 @@ int main(){
 		message_len=message_len-match_message.length();
 		startIndex += match_message.length();
 		encoded+=encodeMatchedMessage(match_message.length(),distance);
-		std::ofstream outfile;
-		// outfile.open("output.txt", std::ios_base::app); // append instead of overwrite
-		// outfile << match_message <<" "<<encoded<<endl;
-		outfile.close();
+		// std::ofstream outfile;
+		// // outfile.open("output.txt", std::ios_base::app); // append instead of overwrite
+		// // outfile << match_message <<" "<<encoded<<endl;
+		// outfile.close();
 
 		//making match_message null
 		match_message="";
